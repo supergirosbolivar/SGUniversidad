@@ -1,0 +1,63 @@
+[
+  {"id":"A1","category":"CT1","name":"doblechance","state":"A","alt":"SuperGIROS-doblechance-chance","source":"chances/doblechance.png"},
+  {"id":"A2","category":"CT1","name":"chance-millonario","state":"A","alt":"SuperGIROS-chance-millonario-chance","source":"chances/chance-millonario.png"},
+  {"id":"A3","category":"CT1","name":"superastro","state":"A","alt":"SuperGIROS-superastro-chance","source":"chances/superastro.png"},
+  {"id":"A4","category":"CT1","name":"loteria-cruz-roja","state":"A","alt":"SuperGIROS-loteria-cruz-roja-chance","source":"chances/loteria-cruz-roja.png"},
+  {"id":"A5","category":"CT1","name":"loteria-quindio","state":"A","alt":"SuperGIROS-loteria-quindio-chance","source":"chances/loteria-quindio.png"},
+  {
+    "id":"06",
+    "category":"02",
+    "name":"SuperGIROS-movistar-recargas",
+    "state": "A",
+    "alt":"movistar-recargas",
+    "source":"recargas/movistar_logo.jpg"
+  },
+  {
+    "id":"07",
+    "category":"02",
+    "name":"SuperGIROS-claro-recargas",
+    "state": "A",
+    "alt":"claro-recargas",
+    "source":"recargas/claro-logo.png"
+  },
+  {
+    "id":"08","category":"02","name":"SuperGIROS-tigo-recargas","state": "A","alt":"tigo-recargas",
+    "source":"recargas/tigo-logo.png"
+  },
+  {
+    "id":"09",
+    "category":"02",
+    "name":"SuperGIROS-etb-recargas",
+    "state": "A",
+    "alt":"etb-recargas",
+    "source":"recargas/etb-logo.png"
+  },
+  {"id":"D1","category":"CT4","name":"aguas-de-cartagena","state":"A","alt":"SuperGIROS-aguas-de-cartagena-recaudos","source":"recaudos/aguas-de-cartagena.png"},
+  {"id":"D2","category":"CT4","name":"altipal","state":"A","alt":"SuperGIROS-altipal-recaudos","source":"recaudos/altipal.png"},
+  {"id":"D3","category":"CT4","name":"ami","state":"A","alt":"SuperGIROS-ami-recaudos","source":"recaudos/ami.png"},
+  {"id":"D4","category":"CT4","name":"aseo-urbano","state":"A","alt":"SuperGIROS-aseo-urbano-recaudos","source":"recaudos/aseo-urbano.png"},
+  {"id":"D5","category":"CT4","name":"cablemag","state":"A","alt":"SuperGIROS-cablemag-recaudos","source":"recaudos/cablemag.png"},
+  {"id":"D6","category":"CT4","name":"comfenalco","state":"A","alt":"SuperGIROS-comfenalco-recaudos","source":"recaudos/comfenalco.png"},
+  {"id":"D7","category":"CT4","name":"dolce","state":"A","alt":"SuperGIROS-dolce-recaudos","source":"recaudos/dolce.png"},
+  {"id":"D8","category":"CT4","name":"electricaribe","state":"A","alt":"SuperGIROS-electricaribe-recaudos","source":"recaudos/electricaribe.png"},
+  {"id":"D9","category":"CT4","name":"fullmovil","state":"A","alt":"SuperGIROS-fullmovil-recaudos","source":"recaudos/fullmovil.png"},
+  {"id":"D10","category":"CT4","name":"fundacion-universitaria-tecnologico-comfenalco","state":"A","alt":"SuperGIROS-fundacion-universitaria-tecnologico-comfenalco-recaudos","source":"recaudos/fundacion-universitaria-tecnologico-comfenalco.png"},
+  {"id":"D11","category":"CT4","name":"hiz-internet","state":"A","alt":"SuperGIROS-hiz-internet-recaudos","source":"recaudos/hiz-internet.png"},
+  {"id":"D12","category":"CT4","name":"jamar","state":"A","alt":"SuperGIROS-jamar-recaudos","source":"recaudos/jamar.png"},
+  {"id":"D13","category":"CT4","name":"marketing-profesional","state":"A","alt":"SuperGIROS-marketing-profesional-recaudos","source":"recaudos/marketing-profesional.png"},
+  {"id":"D14","category":"CT4","name":"mundo-mujer","state":"A","alt":"SuperGIROS-mundo-mujer-recaudos","source":"recaudos/mundo-mujer.png"},
+  {"id":"D15","category":"CT4","name":"place-to-play","state":"A","alt":"SuperGIROS-place-to-play-recaudos","source":"recaudos/place-to-play.png"},
+  {"id":"D16","category":"CT4","name":"rafael-nuñez","state":"A","alt":"SuperGIROS-rafael-nuñez-recaudos","source":"recaudos/rafael-nuñez.png"},
+  {"id":"D17","category":"CT4","name":"registraduria-nacional","state":"A","alt":"SuperGIROS-registraduria-nacional-recaudos","source":"recaudos/registraduria-nacional.png"},
+  {"id":"D18","category":"CT4","name":"romano-electroreyes","state":"A","alt":"SuperGIROS-romano-electroreyes-recaudos","source":"recaudos/romano-electroreyes.png"},
+  {"id":"D19","category":"CT4","name":"sistecredito","state":"A","alt":"SuperGIROS-sistecredito-recaudos","source":"recaudos/sistecredito.png"},
+  {"id":"D20","category":"CT4","name":"sucredito","state":"A","alt":"SuperGIROS-sucredito-recaudos","source":"recaudos/sucredito.png"},
+  {"id":"D21","category":"CT4","name":"superintendencia-notariado-registro","state":"A","alt":"SuperGIROS-superintendencia-notariado-registro-recaudos","source":"recaudos/superintendencia-notariado-registro.png"},
+  {"id":"D22","category":"CT4","name":"surtigas","state":"A","alt":"SuperGIROS-surtigas-recaudos","source":"recaudos/surtigas.png"},
+  {"id":"D23","category":"CT4","name":"taxis-elite","state":"A","alt":"SuperGIROS-taxis-elite-recaudos","source":"recaudos/taxis-elite.png"},
+  {"id":"D24","category":"CT4","name":"tejiendo-sueños-oprtunidades","state":"A","alt":"SuperGIROS-tejiendo-sueños-oprtunidades-recaudos","source":"recaudos/tejiendo-sueños-oprtunidades.png"},
+  {"id":"D25","category":"CT4","name":"terrazas-de-calicanto","state":"A","alt":"SuperGIROS-terrazas-de-calicanto-recaudos","source":"recaudos/terrazas-de-calicanto.png"},
+  {"id":"D26","category":"CT4","name":"transcaribe","state":"A","alt":"SuperGIROS-transcaribe-recaudos","source":"recaudos/transcaribe.png"},
+  {"id":"D27","category":"CT4","name":"tu-compra","state":"A","alt":"SuperGIROS-tu-compra-recaudos","source":"recaudos/tu-compra.png"},
+  {"id":"D28","category":"CT4","name":"unitecnar","state":"A","alt":"SuperGIROS-unitecnar-recaudos","source":"recaudos/unitecnar.png"}
+]
