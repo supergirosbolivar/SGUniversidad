@@ -15,10 +15,9 @@ function loadProducts(){
     .then(function(data){
       data.forEach(function(p){
         category = p.category
-        console.log(category)
         if( p.state === 'A' ){
           source = p.source
-          box = ' <div class="box">' +
+          box = ' <div class="box" id="'+p.name+'">' +
                   ' <img src="image/products/'+source+'" alt="'+p.alt+'" id="'+p.name+'">' +
                 ' </div>'
           if( category === 'CT1' ){  
@@ -40,7 +39,9 @@ function loadProducts(){
       elChance.innerHTML += boxesCat01
       elRecargas.innerHTML += boxesCat02 
       elRecaudos.innerHTML += boxesCat04
+      captureEventBox()
     })
+    
 }
 
 function searchProduct(){
@@ -89,6 +90,45 @@ function searchCoincidence(letters){
   })
 }
 
+function captureEventBox(){
+  modalTitle = document.querySelector('#modal-title')
+  superIframe = document.querySelector('#SuperIframe')
+  boxes = document.querySelectorAll('.box')
+  loading = document.querySelector('.loading')
+  id = routeFile = ''
+  boxes.forEach( info => {
+    info.addEventListener('click', function(box) {
+      box.preventDefault()
+      loadShowModal(box.target.id)
+
+
+      /*
+      loading.classList.remove('none')
+      id = box.target.id
+      setTimeout(() => {
+        routeFile = './files/'+id+'.pdf'
+        title = id.replaceAll("-"," ")
+        modalTitle.textContent = title
+        superIframe.setAttribute("src", routeFile);
+        loading.classList.add('none')
+        document.querySelector('.container-modal').classList.remove('none')
+        captureEventCloseModal()
+        routeFile = ''
+      }, 3000)
+      */
+    })
+
+    boxesImages = document.querySelectorAll('.box a')
+    boxesImages.forEach( info => {
+      info.addEventListener('click', function(box) {
+        box.preventDefault()
+        loadShowModal(box.target.id)
+      })
+    })  
+
+  })
+}
+
 function validateKey(key){
   reply = false
   vectorKey = []
@@ -104,3 +144,27 @@ function validateKey(key){
   }
   return reply
 }
+
+function captureEventCloseModal(){
+  btnClose = document.querySelector('.btn-close')
+  btnClose.addEventListener('click', () =>{
+    document.querySelector('.container-modal').classList.add('none')
+  })
+}
+
+function loadShowModal(id){
+  modalTitle = document.querySelector('#modal-title')
+  superIframe = document.querySelector('#SuperIframe')
+  boxes = document.querySelectorAll('.box')
+  loading = document.querySelector('.loading')
+  routeFile = ''
+  loading.classList.remove('none')
+  routeFile = './files/'+id+'.pdf'
+  title = id.replaceAll("-"," ")
+  modalTitle.textContent = title
+  superIframe.setAttribute("src", routeFile);
+  loading.classList.add('none')
+  document.querySelector('.container-modal').classList.remove('none')
+  captureEventCloseModal()
+}
+
