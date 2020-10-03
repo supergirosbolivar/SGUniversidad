@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
 }, false)
 
 function loadProducts(){
-  boxesCat01 = '', boxesCat02 = '', boxesCat04 = '', box = ''
+  boxesCat01 = '', boxesCat02 = '', boxesCat03 = '', boxesCat04 = '', box = ''
   url = './js/assets/products.json'
   fetch(url)
     .then(function(response){
@@ -24,6 +24,8 @@ function loadProducts(){
             boxesCat01 += box 
           }else if( category === '02' ){
             boxesCat02 += box
+          }else if( category === 'CT3' ){
+            boxesCat03 += box
           }else if( category === 'CT4' ){
             boxesCat04 += box
           }
@@ -32,12 +34,14 @@ function loadProducts(){
       })
       elChance = document.querySelector('#chance')
       elRecargas = document.querySelector('#recargas')
+      elGiros = document.querySelector('#giros')
       elRecaudos = document.querySelector('#recaudos')
 
-      elChance.innerHTML = '', elRecargas.innerHTML = '', elRecaudos.innerHTML = ''
+      elChance.innerHTML = '', elRecargas.innerHTML = '', elGiros.innerHTML = '', elRecaudos.innerHTML = ''
       
       elChance.innerHTML += boxesCat01
       elRecargas.innerHTML += boxesCat02 
+      elGiros.innerHTML += boxesCat03
       elRecaudos.innerHTML += boxesCat04
       captureEventBox()
     })

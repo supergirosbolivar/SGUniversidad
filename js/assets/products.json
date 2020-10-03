@@ -48,6 +48,7 @@
     "alt":"wings-mobile--recargas",
     "source":"recargas/wings-mobile.jpg"
   },
+  {"id":"C1","category":"CT3","name":"giros","state":"A","alt":"SuperGIROS-giros-recaudos","source":"giros/giros.jpeg"},
   {"id":"D1","category":"CT4","name":"aguas-de-cartagena","state":"A","alt":"SuperGIROS-aguas-de-cartagena-recaudos","source":"recaudos/aguas-de-cartagena.png"},
   {"id":"D2","category":"CT4","name":"altipal","state":"A","alt":"SuperGIROS-altipal-recaudos","source":"recaudos/altipal.png"},
   {"id":"D3","category":"CT4","name":"ami","state":"A","alt":"SuperGIROS-ami-recaudos","source":"recaudos/ami.png"},
