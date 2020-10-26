@@ -1,9 +1,14 @@
 [
-  {"id":"A1","category":"CT1","name":"doblechance","state":"A","alt":"SuperGIROS-doblechance-chance","source":"chances/doblechance.png"},
-  {"id":"A2","category":"CT1","name":"chance-millonario","state":"A","alt":"SuperGIROS-chance-millonario-chance","source":"chances/chance-millonario.png"},
-  {"id":"A3","category":"CT1","name":"superastro","state":"A","alt":"SuperGIROS-superastro-chance","source":"chances/superastro.png"},
-  {"id":"A4","category":"CT1","name":"loteria-cruz-roja","state":"A","alt":"SuperGIROS-loteria-cruz-roja-chance","source":"chances/loteria-cruz-roja.png"},
-  {"id":"A5","category":"CT1","name":"loteria-quindio","state":"A","alt":"SuperGIROS-loteria-quindio-chance","source":"chances/loteria-quindio.png"},
+  {"id":"A1","category":"CT1","name":"chance","state":"A","alt":"SuperGIROS-chance","source":"chances/chance.png"},
+  {"id":"A2","category":"CT1","name":"doblechance","state":"A","alt":"SuperGIROS-doblechance-chance","source":"chances/doblechance.png"},
+  {"id":"A3","category":"CT1","name":"chance-millonario","state":"A","alt":"SuperGIROS-chance-millonario-chance","source":"chances/chance-millonario.png"},
+  {"id":"A4","category":"CT1","name":"superastro","state":"A","alt":"SuperGIROS-superastro-chance","source":"chances/superastro.png"},
+  {"id":"A5","category":"CT1","name":"tripletazo","state":"A","alt":"SuperGIROS-tripletazo","source":"chances/tripletazo.png"},
+  {"id":"A6","category":"CT1","name":"superchance","state":"A","alt":"SuperGIROS-superchance","source":"chances/superchance.png"},
+  {"id":"A7","category":"CT1","name":"pagamas","state":"A","alt":"SuperGIROS-pagamas","source":"chances/pagamas.png"},
+  {"id":"A8","category":"CT1","name":"loteria-cruz-roja","state":"A","alt":"SuperGIROS-loteria-cruz-roja-chance","source":"chances/loteria-cruz-roja.png"},
+  {"id":"A9","category":"CT1","name":"loteria-quindio","state":"A","alt":"SuperGIROS-loteria-quindio-chance","source":"chances/loteria-quindio.png"},
+  {"id":"A10","category":"CT1","name":"loteria-en-linea","state":"A","alt":"SuperGIROS-loteria-en-linea","source":"chances/loteria-en-linea.png"},
   {
     "id":"06",
     "category":"02",
@@ -48,7 +53,7 @@
     "alt":"wings-mobile--recargas",
     "source":"recargas/wings-mobile.jpg"
   },
-  {"id":"C1","category":"CT3","name":"giros","state":"A","alt":"SuperGIROS-giros-recaudos","source":"giros/giros.jpeg"},
+  {"id":"C1","category":"CT3","name":"giros-nacionales","state":"A","alt":"SuperGIROS-giros-recaudos","source":"giros/giros.jpeg"},
   {"id":"D1","category":"CT4","name":"aguas-de-cartagena","state":"A","alt":"SuperGIROS-aguas-de-cartagena-recaudos","source":"recaudos/aguas-de-cartagena.png"},
   {"id":"D2","category":"CT4","name":"altipal","state":"A","alt":"SuperGIROS-altipal-recaudos","source":"recaudos/altipal.png"},
   {"id":"D3","category":"CT4","name":"ami","state":"A","alt":"SuperGIROS-ami-recaudos","source":"recaudos/ami.png"},
@@ -76,5 +81,6 @@
   {"id":"D25","category":"CT4","name":"terrazas-de-calicanto","state":"A","alt":"SuperGIROS-terrazas-de-calicanto-recaudos","source":"recaudos/terrazas-de-calicanto.png"},
   {"id":"D26","category":"CT4","name":"transcaribe","state":"A","alt":"SuperGIROS-transcaribe-recaudos","source":"recaudos/transcaribe.png"},
   {"id":"D27","category":"CT4","name":"tu-compra","state":"A","alt":"SuperGIROS-tu-compra-recaudos","source":"recaudos/tu-compra.png"},
-  {"id":"D28","category":"CT4","name":"unitecnar","state":"A","alt":"SuperGIROS-unitecnar-recaudos","source":"recaudos/unitecnar.png"}
+  {"id":"D28","category":"CT4","name":"unitecnar","state":"A","alt":"SuperGIROS-unitecnar-recaudos","source":"recaudos/unitecnar.png"},
+  {"id":"D29","category":"CT4","name":"gases-del-caribe","state":"A","alt":"SuperGIROS-gases-del-caribe","source":"recaudos/gases-del-caribe.png"}
 ]
