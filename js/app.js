@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function loadProducts(){
   console.log('start load all products')
-  boxesCat01 = '', boxesCat02 = '', boxesCat03 = '', boxesCat04 = '', box = ''
+  boxesCat01 = boxesCat02 = boxesCat03 = boxesCat04 = boxesCat05 = box = ''
   url = './js/assets/products.json'
   fetch(url)
     .then(function(response){
@@ -25,14 +25,16 @@ function loadProducts(){
           box = ' <div class="box" id="'+p.name+'">' +
                   ' <img src="image/products/'+source+'" alt="'+p.alt+'" id="'+p.name+'">' +
                 ' </div>'
-          if( category === 'CT1' ){  
+          if( category === 'CT1' ){        // chanche
             boxesCat01 += box 
-          }else if( category === '02' ){
+          }else if( category === 'CT2' ){   // loterias
             boxesCat02 += box
-          }else if( category === 'CT3' ){
+          }else if( category === 'CT3' ){  // Recargas
             boxesCat03 += box
-          }else if( category === 'CT4' ){
+          }else if( category === 'CT4' ){  // Giros
             boxesCat04 += box
+          }else if( category === 'CT5' ){  // Recaudos
+            boxesCat05 += box
           }
                
         }
@@ -40,16 +42,18 @@ function loadProducts(){
       clearProductsSectionAll()
 
       elChance = document.querySelector('#chance')
+      elLoteria = document.querySelector('#loteria')
       elRecargas = document.querySelector('#recargas')
       elGiros = document.querySelector('#giros')
       elRecaudos = document.querySelector('#recaudos')
 
-      elChance.innerHTML = '', elRecargas.innerHTML = '', elGiros.innerHTML = '', elRecaudos.innerHTML = ''
+      elChance.innerHTML = '', elLoteria.innerHTML = '', elRecargas.innerHTML = '', elGiros.innerHTML = '', elRecaudos.innerHTML = ''
       
       elChance.innerHTML += boxesCat01
-      elRecargas.innerHTML += boxesCat02 
-      elGiros.innerHTML += boxesCat03
-      elRecaudos.innerHTML += boxesCat04
+      elLoteria.innerHTML += boxesCat02
+      elRecargas.innerHTML += boxesCat03 
+      elGiros.innerHTML += boxesCat04
+      elRecaudos.innerHTML += boxesCat05
       captureEventBox()
     })
     
