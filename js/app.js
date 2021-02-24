@@ -6,13 +6,66 @@ document.addEventListener('DOMContentLoaded', function(){
   captureEventCloseMenu()
   turnOnSlides()
   //searchCoincidence()
-  
 }, false)
 
 function loadProducts(){
   console.log('start load all products')
+  boxesChance = boxesLoteria = boxesRecargas = boxesGiros = boxesRecaudos = box = ''
+  url = './js/assets/products-data.json'
+  fetch(url)
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      data.forEach(function(p){
+        category = p.category
+        if( p.state === 'A' ){
+          let backgroundColor = '';
+          const {source, file, id} = p;
+          if( id === 'C11' || id === 'E35' ){
+            backgroundColor = '#07103e';
+          }
+          box = ' <div class="box" id="'+p.id+'" style="background:'+backgroundColor+'" data-product-name="'+p.name+'" data-product-file="'+file+'">' +
+                  ' <img src="image/products/'+source+'" alt="'+p.alt+'" id="'+p.id+'" data-target="'+p.name+'">' +
+                ' </div>'
+          if( category === 'chance' ){
+            boxesChance += box 
+          }else if( category === 'loteria' ){ 
+            boxesLoteria += box
+          }else if( category === 'recargas' ){
+            boxesRecargas += box
+          }else if( category === 'giros' ){
+            boxesGiros += box
+          }else if( category === 'otrosProductos' ){
+            boxesRecaudos += box
+          }
+               
+        }
+      })
+      clearProductsSectionAll()
+
+      elChance = document.querySelector('#chance')
+      elLoteria = document.querySelector('#loteria')
+      elRecargas = document.querySelector('#recargas')
+      elGiros = document.querySelector('#giros')
+      elRecaudos = document.querySelector('#recaudos')
+
+      elChance.innerHTML = '', elLoteria.innerHTML = '', elRecargas.innerHTML = '', elGiros.innerHTML = '', elRecaudos.innerHTML = ''
+      
+      elChance.innerHTML += boxesChance
+      elLoteria.innerHTML += boxesLoteria
+      elRecargas.innerHTML += boxesRecargas 
+      elGiros.innerHTML += boxesGiros
+      elRecaudos.innerHTML += boxesRecaudos
+      captureEventBox()
+      showNameProduct()
+    })
+}
+
+function loadProducts_OLD(){
+  console.log('start load all products')
   boxesCat01 = boxesCat02 = boxesCat03 = boxesCat04 = boxesCat05 = box = ''
-  url = './js/assets/products.json'
+  url = './js/assets/products-data.json'
   fetch(url)
     .then(function(response){
       return response.json()
@@ -22,18 +75,21 @@ function loadProducts(){
         category = p.category
         if( p.state === 'A' ){
           source = p.source
-          box = ' <div class="box" id="'+p.name+'">' +
-                  ' <img src="image/products/'+source+'" alt="'+p.alt+'" id="'+p.name+'">' +
+          file = p.file
+          console.log(file)
+          box = ' <div class="box" id="'+p.name+'" data-product-file="'+file+'">' +
+                  ' <img src="image/products/'+source+'" alt="'+p.alt+'" id="'+p.name+'" data-target="'+p.name+'">' +
                 ' </div>'
-          if( category === 'CT1' ){        // chanche
+          console.log(box)
+          if( category === 'chance' ){        // chanche
             boxesCat01 += box 
-          }else if( category === 'CT2' ){   // loterias
+          }else if( category === 'loteria' ){   // loterias
             boxesCat02 += box
-          }else if( category === 'CT3' ){  // Recargas
+          }else if( category === 'recargas' ){  // Recargas
             boxesCat03 += box
-          }else if( category === 'CT4' ){  // Giros
+          }else if( category === 'giros' ){  // Giros
             boxesCat04 += box
-          }else if( category === 'CT5' ){  // Recaudos
+          }else if( category === 'otrosProductos' ){  // Recaudos
             boxesCat05 += box
           }
                
@@ -56,7 +112,6 @@ function loadProducts(){
       elRecaudos.innerHTML += boxesCat05
       captureEventBox()
     })
-    
 }
 
 function searchProduct(){
@@ -119,23 +174,38 @@ function captureEventBox(){
   boxes.forEach( info => {
     info.addEventListener('click', function(box) {
       box.preventDefault()
+      let idElement = box.target.id;
+      let boxContent = document.getElementById(''+idElement)
+      let file = boxContent.dataset.productFile;
+      let name = boxContent.dataset.productName;
+      console.log(boxContent.dataset.productFile)
+      loadShowModal(id,name,file)
+    })
+
+    boxesImages = document.querySelectorAll('.box a')
+    boxesImages.forEach( info => {
+      info.addEventListener('click', function(box) {
+        box.preventDefault()
+        loadShowModal(box.target.id)
+      })
+    })  
+  })
+}
+
+function captureEventBox_OLD(){
+  modalTitle = document.querySelector('#modal-title')
+  superIframe = document.querySelector('#SuperIframe')
+  boxes = document.querySelectorAll('.box')
+  loading = document.querySelector('.loading')
+  id = routeFile = ''
+  boxes.forEach( info => {
+    info.addEventListener('click', function(box) {
+      box.preventDefault()
+      let boxContent = document.getElementById(''+box.target.id)
+      console.log(boxContent)
+      console.log(boxContent.dataset)
+      console.log(boxContent.dataset.productFile)
       loadShowModal(box.target.id)
-
-
-      /*
-      loading.classList.remove('none')
-      id = box.target.id
-      setTimeout(() => {
-        routeFile = './files/'+id+'.pdf'
-        title = id.replaceAll("-"," ")
-        modalTitle.textContent = title
-        superIframe.setAttribute("src", routeFile);
-        loading.classList.add('none')
-        document.querySelector('.container-modal').classList.remove('none')
-        captureEventCloseModal()
-        routeFile = ''
-      }, 3000)
-      */
     })
 
     boxesImages = document.querySelectorAll('.box a')
@@ -192,7 +262,25 @@ function captureEventCloseModal(){
   })
 }
 
-function loadShowModal(id){
+function loadShowModal(id,name,file){
+  modalTitle = document.querySelector('#modal-title')
+  superIframe = document.querySelector('#SuperIframe')
+  boxes = document.querySelectorAll('.box')
+  loading = document.querySelector('.loading')
+  routeFile = ''
+  loading.classList.remove('none')
+  routeFile = './files/'+file
+  //console.log(routeFile)
+  title = name.replaceAll("-"," ")
+  modalTitle.textContent = title
+  superIframe.setAttribute("src", routeFile);
+  status = validateExistFile(routeFile)
+  loading.classList.add('none')
+  document.querySelector('.container-modal').classList.remove('none')
+  captureEventCloseModal()
+}
+
+function loadShowModal_OLD(id){
   modalTitle = document.querySelector('#modal-title')
   superIframe = document.querySelector('#SuperIframe')
   boxes = document.querySelectorAll('.box')
@@ -350,4 +438,20 @@ function turnOnSlides(){
   });
 
   
+}
+
+function showNameProduct(){
+  let contentNameProduct = document.querySelector('#nameProductHover');
+  let allboxes = document.querySelectorAll('.box');
+  allboxes.forEach( box =>{ box.addEventListener('mouseover', ()=>{
+    let name = box.dataset.productName;
+    let nameProductHover = document.querySelector('#nameProductHover');
+    name = name.split('-').join(' ').split('_').join(' ');
+    nameProductHover.textContent = name;
+    contentNameProduct.style = 'display: block';
+  })})
+
+  allboxes.forEach( box =>{ box.addEventListener('mouseout', ()=>{
+    contentNameProduct.style = 'display: none';
+  })})
 }

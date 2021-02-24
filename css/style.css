@@ -137,8 +137,8 @@ body{
 }
 .products{
   width: 780px;
-  height: 500px;
-  max-height: 600px;
+  height: calc(95vh - 150px);
+  /*max-height: 600px;*/
   margin-left: 420px;
   overflow-y: auto;
   /*background: green;*/
@@ -264,10 +264,10 @@ background: #d4d4d4;
   background-color: rgba(0,0,0,.5); 
 }
 .modal{
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -50%);
   width: 80%;
   height: 100vh;
   background: #fff;
@@ -287,7 +287,7 @@ background: #d4d4d4;
 }
 .modal .modal-content{
   width: 95%;
-  height: 500px;
+  height: calc(100vh - 100px);
   margin: 0 auto;
   overflow: hidden;
 }
@@ -343,4 +343,19 @@ background: #d4d4d4;
 } 
 .loading .loading-content .text{
   color: #263238;
+}
+.name-product{
+  display: none;
+  position: absolute; 
+  bottom: 2%; 
+  left: 2%; 
+  width: 300px; 
+  height: 50px; 
+  line-height: 50px;
+  background: #01579b; 
+  color: #ffffff;
+  border-radius: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.8s ease-in-out;
 }
